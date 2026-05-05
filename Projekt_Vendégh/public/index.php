@@ -6,13 +6,15 @@
 </section>
 
 <section class="posts">
-    <div class="container">
+    <div class="container posts-grid">
 
         <div class="post">
-            <img src="assets/images/porsche911_2.jpg" alt="">
-            <h3>História Porsche 911</h3>
-            <p>Legendárne športové auto a jeho vývoj počas rokov...</p>
-            <a href="article.php?model=911">Čítať viac →</a>
+            <img src="assets/images/porsche911_2.jpg" alt="Porsche 911">
+            <div class="post-content">
+                <h3>Porsche 911</h3>
+                <p>Legendárne športové auto, ktoré sa stalo ikonou značky Porsche.</p>
+                <a href="article.php?model=911">Čítať viac →</a>
+            </div>
         </div>
 
     </div>
