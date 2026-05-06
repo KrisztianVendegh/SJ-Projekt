@@ -1,5 +1,5 @@
 <footer>
-    <p>© 2026 Porsche Blog</p>
+    <p>© Krisztián Vendégh 2026 Porsche Blog</p>
 </footer>
 
 </body>
