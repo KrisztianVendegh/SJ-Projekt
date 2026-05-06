@@ -303,3 +303,66 @@ header h1 a:active {
     color: #ff7a00;
     text-decoration: none;
 }
+/* ADMIN DASHBOARD */
+.admin-section {
+    padding: 50px 0;
+}
+
+.admin-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-top h3 {
+    color: #ff7a00;
+    font-size: 24px;
+}
+
+.admin-button {
+    background: #ff7a00;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.admin-button:hover {
+    background: #cc6200;
+}
+
+.admin-table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+.admin-table th {
+    background: #111;
+    color: #ff7a00;
+}
+
+.edit-link {
+    color: #ff7a00;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.delete-link {
+    color: #ff4d4d;
+    text-decoration: none;
+}
