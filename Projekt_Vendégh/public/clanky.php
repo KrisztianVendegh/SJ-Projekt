@@ -1,4 +1,18 @@
-<?php include '../app/templates/header.php'; ?>
+<?php
+
+require_once '../app/classes/Database.php';
+require_once '../app/classes/Article.php';
+
+$database = new Database();
+$db = $database->connect();
+
+$articleModel = new Article($db);
+$articles = $articleModel->getAll();
+
+include '../app/templates/header.php';
+?>
+
+<main>
 
 <section class="page-header">
     <div class="container">
@@ -10,52 +24,33 @@
 <section class="posts">
     <div class="container posts-grid">
 
-        <div class="post">
-            <img src="assets/images/porsche911.jpg" alt="Porsche 911">
-            <div class="post-content">
-                <h3>Porsche 911</h3>
-                <p>Legendárne športové auto, ktoré sa stalo ikonou značky Porsche.</p>
-                <a href="article.php?model=911">Čítať viac →</a>
-            </div>
-        </div>
+        <?php foreach ($articles as $article): ?>
 
-        <div class="post">
-            <img src="assets/images/taycan.jpg" alt="Porsche Taycan">
-            <div class="post-content">
-                <h3>Porsche Taycan</h3>
-                <p>Prvý plne elektrický model Porsche s modernou technológiou.</p>
-                <a href="article.php?model=taycan">Čítať viac →</a>
-            </div>
-        </div>
+            <div class="post">
 
-        <div class="post">
-            <img src="assets/images/cayenne.jpg" alt="Porsche Cayenne">
-            <div class="post-content">
-                <h3>Porsche Cayenne</h3>
-                <p>Luxusné SUV, ktoré spája komfort, výkon a praktickosť.</p>
-                <a href="article.php?model=cayenne">Čítať viac →</a>
-            </div>
-        </div>
+                <img src="<?php echo $article['image']; ?>" alt="<?php echo $article['title']; ?>">
 
-        <div class="post">
-            <img src="assets/images/panamera.jpg" alt="Porsche Panamera">
-            <div class="post-content">
-                <h3>Porsche Panamera</h3>
-                <p>Športová limuzína určená pre vodičov, ktorí chcú výkon aj pohodlie.</p>
-                <a href="article.php?model=panamera">Čítať viac →</a>
-            </div>
-        </div>
+                <div class="post-content">
 
-        <div class="post">
-            <img src="assets/images/macan.jpg" alt="Porsche Macan">
-            <div class="post-content">
-                <h3>Porsche Macan</h3>
-                <p>Kompaktné SUV s dynamickým charakterom typickým pre Porsche.</p>
-                <a href="article.php?model=macan">Čítať viac →</a>
+                    <h3><?php echo $article['title']; ?></h3>
+
+                    <p>
+                        <?php echo shortText($article['subtitle'], 80); ?>
+                    </p>
+
+                    <a href="article.php?model=<?php echo $article['model_key']; ?>">
+                        Čítať viac →
+                    </a>
+
+                </div>
+
             </div>
-        </div>
+
+        <?php endforeach; ?>
 
     </div>
 </section>
+
+</main>
 
 <?php include '../app/templates/footer.php'; ?>

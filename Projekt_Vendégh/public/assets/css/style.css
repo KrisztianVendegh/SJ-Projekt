@@ -45,6 +45,14 @@ header .container {
 header h1 {
     color: #ff7a00;
 }
+header h1 a {
+    color: #ff7a00 !important;
+    text-decoration: none !important;
+}
+
+header h1 a:hover {
+    color: #cc6200 !important;
+}
 
 /* NAVBAR */
 nav a {
@@ -287,4 +295,11 @@ footer {
     text-align: center;
     padding: 20px;
     border-top: 2px solid #ff7a00;
+}
+header h1 a,
+header h1 a:visited,
+header h1 a:hover,
+header h1 a:active {
+    color: #ff7a00;
+    text-decoration: none;
 }
