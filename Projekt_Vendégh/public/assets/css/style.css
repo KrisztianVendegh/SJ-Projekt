@@ -366,3 +366,11 @@ header h1 a:active {
     color: #ff4d4d;
     text-decoration: none;
 }
+.admin-form-box {
+    max-width: 700px;
+}
+
+.admin-form-box textarea {
+    min-height: 120px;
+    resize: vertical;
+}
