@@ -16,7 +16,7 @@ $db = $database->connect();
 $articleModel = new Article($db);
 $articles = $articleModel->getAll();
 
-include '../../app/templates/header.php';
+include '../../app/templates/admin-header.php';
 ?>
 
 <main>
@@ -28,12 +28,37 @@ include '../../app/templates/header.php';
     </div>
 </section>
 
+<section class="admin-stats">
+    <div class="container admin-stats-grid">
+
+        <div class="stat-card">
+            <h3><?php echo count($articles); ?></h3>
+            <p>Články</p>
+        </div>
+
+        <div class="stat-card">
+            <h3><?php echo $_SESSION['admin_username']; ?></h3>
+            <p>Používateľ</p>
+        </div>
+
+        <div class="stat-card">
+            <h3><?php echo date('d.m.Y'); ?></h3>
+            <p>Dátum</p>
+        </div>
+
+    </div>
+</section>
+
 <section class="admin-section">
     <div class="container">
 
         <div class="admin-top">
             <h3>Zoznam článkov</h3>
-            <a class="admin-button" href="create.php">+ Pridať článok</a>
+
+            <div class="admin-actions">
+                <a class="admin-button" href="create.php">+ Pridať článok</a>
+                <a class="logout-button" href="logout.php">Odhlásiť sa</a>
+            </div>
         </div>
 
         <div class="admin-table-wrapper">
@@ -57,7 +82,14 @@ include '../../app/templates/header.php';
                             <td><?php echo $article['created_at']; ?></td>
                             <td>
                                 <a class="edit-link" href="edit.php?id=<?php echo $article['id']; ?>">Upraviť</a>
-                                <a class="delete-link" href="delete.php?id=<?php echo $article['id']; ?>">Vymazať</a>
+
+                                <a 
+                                    class="delete-link" 
+                                    href="delete.php?id=<?php echo $article['id']; ?>"
+                                    onclick="return confirm('Naozaj chcete vymazať tento článok?');"
+                                >
+                                    Vymazať
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -71,4 +103,9 @@ include '../../app/templates/header.php';
 
 </main>
 
-<?php include '../../app/templates/footer.php'; ?>
+<footer>
+    <p>&copy; <?php echo date('Y'); ?> Porsche Blog Admin Panel</p>
+</footer>
+
+</body>
+</html>

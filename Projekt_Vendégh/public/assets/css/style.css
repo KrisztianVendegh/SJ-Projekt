@@ -5,13 +5,12 @@
     box-sizing: border-box;
 }
 
-/* BODY + FOOTER FIX */
+/* BODY */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #0d0d0d;
     color: #fff;
     line-height: 1.6;
-
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -45,13 +44,13 @@ header .container {
 header h1 {
     color: #ff7a00;
 }
-header h1 a {
-    color: #ff7a00 !important;
-    text-decoration: none !important;
-}
 
-header h1 a:hover {
-    color: #cc6200 !important;
+header h1 a,
+header h1 a:visited,
+header h1 a:hover,
+header h1 a:active {
+    color: #ff7a00;
+    text-decoration: none;
 }
 
 /* NAVBAR */
@@ -100,6 +99,16 @@ nav a.active::after {
     flex-direction: column;
 }
 
+.hero h2 {
+    font-size: 42px;
+    color: #fff;
+}
+
+.hero p {
+    color: #ccc;
+    font-size: 18px;
+}
+
 /* PAGE HEADER */
 .page-header {
     padding: 60px 0 30px;
@@ -127,7 +136,7 @@ nav a.active::after {
     gap: 25px;
 }
 
-/* POST */
+/* POST CARD */
 .post {
     background: #1a1a1a;
     border-radius: 14px;
@@ -189,6 +198,7 @@ nav a.active::after {
 }
 
 .article-main-image {
+    width: 100%;
     max-width: 800px;
     height: 400px;
     object-fit: cover;
@@ -227,6 +237,16 @@ nav a.active::after {
     text-align: center;
 }
 
+.spec-box span {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.spec-box strong {
+    display: block;
+    margin-top: 5px;
+}
+
 /* GALLERY */
 .article-gallery {
     display: grid;
@@ -240,6 +260,21 @@ nav a.active::after {
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
+}
+
+/* BACK BUTTON */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    background: #ff7a00;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background: #cc6200;
 }
 
 /* CONTACT */
@@ -289,20 +324,44 @@ nav a.active::after {
     background: #cc6200;
 }
 
-/* FOOTER */
-footer {
-    background: #000;
-    text-align: center;
-    padding: 20px;
-    border-top: 2px solid #ff7a00;
+/* ADMIN HEADER */
+.admin-header {
+    background: #111;
+    border-bottom: 2px solid #ff7a00;
 }
-header h1 a,
-header h1 a:visited,
-header h1 a:hover,
-header h1 a:active {
+
+.admin-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.admin-header h1 {
     color: #ff7a00;
-    text-decoration: none;
 }
+
+.admin-navbar {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.admin-navbar a {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-left: 0;
+}
+
+.admin-navbar a:hover {
+    background: #ff7a00;
+    color: #fff;
+}
+
 /* ADMIN DASHBOARD */
 .admin-section {
     padding: 50px 0;
@@ -320,6 +379,11 @@ header h1 a:active {
     font-size: 24px;
 }
 
+.admin-actions {
+    display: flex;
+    gap: 10px;
+}
+
 .admin-button {
     background: #ff7a00;
     color: #fff;
@@ -330,6 +394,18 @@ header h1 a:active {
 
 .admin-button:hover {
     background: #cc6200;
+}
+
+.logout-button {
+    background: #333;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.logout-button:hover {
+    background: #555;
 }
 
 .admin-table-wrapper {
@@ -366,6 +442,36 @@ header h1 a:active {
     color: #ff4d4d;
     text-decoration: none;
 }
+
+/* ADMIN STATS */
+.admin-stats {
+    padding: 40px 0 10px;
+}
+
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    color: #ff7a00;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    color: #ccc;
+}
+
+/* ADMIN FORM */
 .admin-form-box {
     max-width: 700px;
 }
@@ -373,4 +479,12 @@ header h1 a:active {
 .admin-form-box textarea {
     min-height: 120px;
     resize: vertical;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #ff7a00;
 }
